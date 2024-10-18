@@ -1,9 +1,8 @@
 # 🛡️ Proyecto de Login y Mensajes Conectado a Base de Datos 🛡️
 
 <p align="center">
-  <img src="https://www.tecnm.mx/images/logos/tecnm_logo.png" alt="TECNM Logo" width="200"/>
+  <img src="[https://www.tecnm.mx/images/logos/tecnm_logo.png](https://iztapalapa3.tecnm.mx/departamentos/planeacion/comuydif/LOGO-VERTICAL.png)" alt="TECNM Logo" width="200"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://itsur.edu.mx/assets/img/ITSUR.png" alt="ITSUR Logo" width="200"/>
 </p>
 
 ## 📜 Descripción
