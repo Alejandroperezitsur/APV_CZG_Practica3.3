@@ -29,7 +29,7 @@ namespace APV_CZG_Practica3._3
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            txtPass.UseSystemPasswordChar = true;
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -45,6 +45,16 @@ namespace APV_CZG_Practica3._3
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
