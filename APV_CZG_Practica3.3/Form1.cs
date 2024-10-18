@@ -56,5 +56,10 @@ namespace APV_CZG_Practica3._3
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
