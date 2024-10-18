@@ -56,8 +56,8 @@ Este proyecto es un sistema de login y registro de usuarios, conectado a una bas
 
 ## 🗂️ Estructura del Proyecto
 
-```bash
-📦 APV_CZG_Practica 3.3
+
+##📦 APV_CZG_Practica 3.3
 📲 Conéctate Conmigo
 <p align="center"> <a href="https://facebook.com/elcaleb10"> <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png"/> </a> <a href="https://instagram.com/elcaleb10"> <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/> </a> </p>
-<p align="center">Hecho con 💻 y ☕ por <strong>@elcaleb10</strong></p> ```
+<p align="center">Hecho con 💻 y ☕ por <strong>@elcaleb10</strong></p> 
