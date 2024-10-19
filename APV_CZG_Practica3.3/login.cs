@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace APV_CZG_Practica3._3
 {
-    public partial class Form1 : Form
+    public partial class login : Form
     {
-        public Form1()
+        public login()
         {
             InitializeComponent();
         }
@@ -58,6 +58,26 @@ namespace APV_CZG_Practica3._3
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
         {
 
         }
