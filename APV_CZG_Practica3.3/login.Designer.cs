@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRegistrarse = new System.Windows.Forms.Button();
+            this.btnRegistrarseL = new System.Windows.Forms.Button();
             this.lblNoCuenta = new System.Windows.Forms.Label();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,22 +58,22 @@
             this.label1.TabIndex = 0;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // btnRegistrarse
+            // btnRegistrarseL
             // 
-            this.btnRegistrarse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistrarse.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnRegistrarse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRegistrarse.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarse.Location = new System.Drawing.Point(356, 364);
-            this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRegistrarse.Name = "btnRegistrarse";
-            this.btnRegistrarse.Size = new System.Drawing.Size(290, 46);
-            this.btnRegistrarse.TabIndex = 1;
-            this.btnRegistrarse.Text = "REGISTRARSE";
-            this.btnRegistrarse.UseVisualStyleBackColor = false;
-            this.btnRegistrarse.Click += new System.EventHandler(this.button1_Click);
+            this.btnRegistrarseL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnRegistrarseL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrarseL.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarseL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnRegistrarseL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegistrarseL.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarseL.Location = new System.Drawing.Point(356, 364);
+            this.btnRegistrarseL.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegistrarseL.Name = "btnRegistrarseL";
+            this.btnRegistrarseL.Size = new System.Drawing.Size(290, 46);
+            this.btnRegistrarseL.TabIndex = 1;
+            this.btnRegistrarseL.Text = "REGISTRARSE";
+            this.btnRegistrarseL.UseVisualStyleBackColor = false;
+            this.btnRegistrarseL.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblNoCuenta
             // 
@@ -214,7 +214,7 @@
             this.txtPass.TabIndex = 12;
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
-            // Form1
+            // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -229,11 +229,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.lblNoCuenta);
-            this.Controls.Add(this.btnRegistrarse);
+            this.Controls.Add(this.btnRegistrarseL);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -249,7 +249,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnRegistrarse;
+        private System.Windows.Forms.Button btnRegistrarseL;
         private System.Windows.Forms.Label lblNoCuenta;
         private System.Windows.Forms.Button btnIniciarSesion;
         private System.Windows.Forms.Label label3;
