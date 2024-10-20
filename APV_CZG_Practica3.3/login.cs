@@ -24,7 +24,13 @@ namespace APV_CZG_Practica3._3
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Registro registroForm = new Registro();
 
+            // Muestra el formulario de registro
+            registroForm.Show();
+
+            // Oculta el formulario actual (opcional, si deseas que el formulario actual desaparezca)
+            this.Hide();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -59,7 +65,22 @@ namespace APV_CZG_Practica3._3
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            string usuario = txtUsuario.Text;
+            string contrasena = txtPass.Text;
 
+            if (usuarioDAO.IniciarSesion(usuario, contrasena))
+            {
+                MessageBox.Show("Inicio de sesión exitoso.");
+                this.Hide();
+                // Abre el menú principal después del login
+                Mensaje mensajeForm = new Mensaje();
+                mensajeForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Credenciales incorrectas.");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -74,7 +95,7 @@ namespace APV_CZG_Practica3._3
 
         private void txtUsuario_TextChanged_1(object sender, EventArgs e)
         {
-
+            txtPass.UseSystemPasswordChar = true;
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)

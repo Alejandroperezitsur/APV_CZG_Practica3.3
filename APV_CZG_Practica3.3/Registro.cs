@@ -79,7 +79,24 @@ namespace APV_CZG_Practica3._3
 
         private void btnRegistrarseR_Click(object sender, EventArgs e)
         {
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            string nombre = txtNombre.Text;
+            string apellido = txtApellido.Text;
+            string correo = txtCorreoElec.Text;
+            string usuario = txtUsuarioR.Text;
+            string contrasena = txtContraseniaR.Text;
 
+            if (usuarioDAO.RegistrarUsuario(nombre, apellido, correo, usuario, contrasena))
+            {
+                MessageBox.Show("Registro exitoso.");
+                this.Hide();
+                login loginForm = new login();
+                loginForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Error al registrar usuario.");
+            }
         }
     }
 }

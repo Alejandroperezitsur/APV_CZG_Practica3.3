@@ -56,23 +56,25 @@
             // 
             this.btnMinize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinize.Image")));
-            this.btnMinize.Location = new System.Drawing.Point(690, 7);
+            this.btnMinize.Location = new System.Drawing.Point(715, 7);
             this.btnMinize.Name = "btnMinize";
             this.btnMinize.Size = new System.Drawing.Size(25, 25);
             this.btnMinize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinize.TabIndex = 1;
             this.btnMinize.TabStop = false;
+            this.btnMinize.Click += new System.EventHandler(this.btnMinize_Click);
             // 
             // btnClose
             // 
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(741, 7);
+            this.btnClose.Location = new System.Drawing.Point(763, 7);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 25);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnClose.TabIndex = 0;
             this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblBienvenida
             // 

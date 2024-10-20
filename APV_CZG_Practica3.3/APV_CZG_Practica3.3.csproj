@@ -124,6 +124,7 @@
     <Compile Include="Mensaje.Designer.cs">
       <DependentUpon>Mensaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="MensajeDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.cs">
@@ -132,6 +133,7 @@
     <Compile Include="Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuarioDAO.cs" />
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>

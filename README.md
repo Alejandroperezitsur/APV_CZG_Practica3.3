@@ -17,45 +17,6 @@ Este proyecto es un sistema de login y registro de usuarios, conectado a una bas
 - **Mensajes**: Los usuarios pueden crear mensajes, los cuales se guardan en la base de datos.
 - **Base de datos**: Todos los datos de usuarios y mensajes se almacenan en una base de datos SQL.
 
-## ⚙️ Instalación
-
-1. Clona este repositorio:
-    ```bash
-    git clone https://github.com/tu_usuario/login-db-mensajes.git
-    ```
-2. Instala las dependencias:
-    ```bash
-    pip install -r requirements.txt
-    ```
-3. Configura tu base de datos en el archivo `config.py`.
-
-4. Ejecuta el proyecto:
-    ```bash
-    python app.py
-    ```
-
-## 🖼️ Capturas de Pantalla
-
-<p align="center">
-  <img src="ruta/a/tu_captura1.png" alt="Pantalla de login" width="400"/>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="ruta/a/tu_captura2.png" alt="Pantalla de registro" width="400"/>
-</p>
-
-## 🚀 Tecnologías Utilizadas
-
-- **Python**: Lenguaje de programación principal.
-- **Flask**: Framework web ligero.
-- **SQLAlchemy**: ORM para manejar la base de datos.
-- **MySQL/PostgreSQL/SQLite**: Dependiendo de tu configuración de base de datos.
-
-## 🛠️ Herramientas de Seguridad
-
-- **Hashing de contraseñas**: Se utiliza `bcrypt` para proteger las contraseñas.
-- **Autenticación segura**: Login con validación de credenciales hashadas.
-
-## 🗂️ Estructura del Proyecto
-
 
 ##📦 APV_CZG_Practica 3.3
 📲 Conéctate Conmigo
