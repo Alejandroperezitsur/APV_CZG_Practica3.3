@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace APV_CZG_Practica3._3
 {
@@ -76,7 +77,11 @@ namespace APV_CZG_Practica3._3
         {
 
         }
-
+        private bool EsCorreoValido(string correo)
+        {
+            string patronCorreo = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            return Regex.IsMatch(correo, patronCorreo);
+        }
         private void btnRegistrarseR_Click(object sender, EventArgs e)
         {
             UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -86,17 +91,62 @@ namespace APV_CZG_Practica3._3
             string usuario = txtUsuarioR.Text;
             string contrasena = txtContraseniaR.Text;
 
-            if (usuarioDAO.RegistrarUsuario(nombre, apellido, correo, usuario, contrasena))
+            // Verificamos que todos los campos estén llenos
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
-                MessageBox.Show("Registro exitoso.");
-                this.Hide();
-                login loginForm = new login();
-                loginForm.Show();
+                MessageBox.Show("El campo 'Nombre' no puede estar vacío.");
+                return;
             }
-            else
+            if (string.IsNullOrWhiteSpace(txtApellido.Text))
             {
-                MessageBox.Show("Error al registrar usuario.");
+                MessageBox.Show("El campo 'Apellido' no puede estar vacío.");
+                return;
             }
+            if (!EsCorreoValido(txtCorreoElec.Text))
+            {
+                MessageBox.Show("El formato del correo electrónico no es válido.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtCorreoElec.Text))
+            {
+                MessageBox.Show("El campo 'Correo Electrónico' no puede estar vacío.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtUsuarioR.Text))
+            {
+                MessageBox.Show("El campo 'Usuario' no puede estar vacío.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtContraseniaR.Text))
+            {
+                MessageBox.Show("El campo 'Contraseña' no puede estar vacío.");
+                return;
+            }
+
+            // Si todos los campos están llenos, llamamos al método para registrar el usuario
+            try
+            {
+                usuarioDAO.RegistrarUsuario(txtNombre.Text, txtApellido.Text, txtCorreoElec.Text, txtUsuarioR.Text, txtContraseniaR.Text);
+                MessageBox.Show("Usuario registrado correctamente.");
+
+                // Limpiamos los campos después del registro exitoso
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar el usuario: " + ex.Message);
+            }
+        }
+
+        // Método para limpiar los campos de texto después de registrar un usuario
+        private void LimpiarCampos()
+        {
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtCorreoElec.Clear();
+            txtUsuarioR.Clear();
+            txtContraseniaR.Clear();
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)

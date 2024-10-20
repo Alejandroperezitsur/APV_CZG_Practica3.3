@@ -43,5 +43,10 @@ namespace APV_CZG_Practica3._3
         {
 
         }
+
+        private void listMensajes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

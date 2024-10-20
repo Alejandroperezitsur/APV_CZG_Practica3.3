@@ -33,11 +33,11 @@
             this.btnMinize = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listMensajes = new System.Windows.Forms.ListBox();
             this.btnDesencriptar = new System.Windows.Forms.Button();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.lblindicacion = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.listMensajes = new System.Windows.Forms.ListBox();
             this.pnlBarraMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -88,6 +88,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 365);
             this.panel1.TabIndex = 3;
+            // 
+            // listMensajes
+            // 
+            this.listMensajes.FormattingEnabled = true;
+            this.listMensajes.ItemHeight = 16;
+            this.listMensajes.Items.AddRange(new object[] {
+            "0"});
+            this.listMensajes.Location = new System.Drawing.Point(12, 18);
+            this.listMensajes.Name = "listMensajes";
+            this.listMensajes.Size = new System.Drawing.Size(158, 292);
+            this.listMensajes.TabIndex = 0;
+            this.listMensajes.SelectedIndexChanged += new System.EventHandler(this.listMensajes_SelectedIndexChanged);
             // 
             // btnDesencriptar
             // 
@@ -145,17 +157,6 @@
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // listMensajes
-            // 
-            this.listMensajes.FormattingEnabled = true;
-            this.listMensajes.ItemHeight = 16;
-            this.listMensajes.Items.AddRange(new object[] {
-            "0"});
-            this.listMensajes.Location = new System.Drawing.Point(12, 18);
-            this.listMensajes.Name = "listMensajes";
-            this.listMensajes.Size = new System.Drawing.Size(158, 292);
-            this.listMensajes.TabIndex = 0;
-            // 
             // VerMensajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -170,6 +171,7 @@
             this.Controls.Add(this.pnlBarraMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VerMensajes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerMensajes";
             this.pnlBarraMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinize)).EndInit();

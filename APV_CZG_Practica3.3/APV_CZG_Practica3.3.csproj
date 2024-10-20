@@ -115,6 +115,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encriptador.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
