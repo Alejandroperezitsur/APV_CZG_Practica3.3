@@ -41,5 +41,24 @@ namespace APV_CZG_Practica3._3
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            login loginForm = new login();
+            loginForm.Show();
+            this.Hide();
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VerMensajes verMensajesForm = new VerMensajes();
+            verMensajesForm.Show();
+            this.Hide();
+        }
     }
 }

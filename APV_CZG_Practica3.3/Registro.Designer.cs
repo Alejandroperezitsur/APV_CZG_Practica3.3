@@ -45,6 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnRegistrarseR = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.pnlBarraMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -237,7 +238,7 @@
             this.btnRegistrarseR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnRegistrarseR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRegistrarseR.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarseR.Location = new System.Drawing.Point(242, 567);
+            this.btnRegistrarseR.Location = new System.Drawing.Point(242, 555);
             this.btnRegistrarseR.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrarseR.Name = "btnRegistrarseR";
             this.btnRegistrarseR.Size = new System.Drawing.Size(290, 46);
@@ -246,12 +247,30 @@
             this.btnRegistrarseR.UseVisualStyleBackColor = false;
             this.btnRegistrarseR.Click += new System.EventHandler(this.btnRegistrarseR_Click);
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnRegresar.FlatAppearance.BorderSize = 0;
+            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnRegresar.Location = new System.Drawing.Point(344, 625);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(90, 32);
+            this.btnRegresar.TabIndex = 24;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(778, 669);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnRegistrarseR);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -298,5 +317,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRegistrarseR;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

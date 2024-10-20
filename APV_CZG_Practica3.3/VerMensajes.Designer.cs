@@ -1,6 +1,6 @@
 ﻿namespace APV_CZG_Practica3._3
 {
-    partial class Mensaje
+    partial class VerMensajes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mensaje));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerMensajes));
             this.pnlBarraMenu = new System.Windows.Forms.Panel();
             this.btnMinize = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.lblBienvenida = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDesencriptar = new System.Windows.Forms.Button();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.lblindicacion = new System.Windows.Forms.Label();
-            this.btnInsertar = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.btnVerMensajes = new System.Windows.Forms.Button();
+            this.listMensajes = new System.Windows.Forms.ListBox();
             this.pnlBarraMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBarraMenu
@@ -51,14 +52,14 @@
             this.pnlBarraMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraMenu.Name = "pnlBarraMenu";
-            this.pnlBarraMenu.Size = new System.Drawing.Size(800, 35);
-            this.pnlBarraMenu.TabIndex = 1;
+            this.pnlBarraMenu.Size = new System.Drawing.Size(938, 35);
+            this.pnlBarraMenu.TabIndex = 2;
             // 
             // btnMinize
             // 
             this.btnMinize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinize.Image")));
-            this.btnMinize.Location = new System.Drawing.Point(715, 7);
+            this.btnMinize.Location = new System.Drawing.Point(829, 7);
             this.btnMinize.Name = "btnMinize";
             this.btnMinize.Size = new System.Drawing.Size(25, 25);
             this.btnMinize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -70,7 +71,7 @@
             // 
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(763, 7);
+            this.btnClose.Location = new System.Drawing.Point(874, 7);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 25);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -78,26 +79,42 @@
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblBienvenida
+            // panel1
             // 
-            this.lblBienvenida.AutoSize = true;
-            this.lblBienvenida.Font = new System.Drawing.Font("Sans Serif Collection", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenida.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblBienvenida.Location = new System.Drawing.Point(27, 48);
-            this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(172, 42);
-            this.lblBienvenida.TabIndex = 21;
-            this.lblBienvenida.Text = "Bienvenido:";
-            this.lblBienvenida.Click += new System.EventHandler(this.lblBienvenida_Click);
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.listMensajes);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 365);
+            this.panel1.TabIndex = 3;
+            // 
+            // btnDesencriptar
+            // 
+            this.btnDesencriptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnDesencriptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDesencriptar.FlatAppearance.BorderSize = 0;
+            this.btnDesencriptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnDesencriptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDesencriptar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesencriptar.Location = new System.Drawing.Point(207, 42);
+            this.btnDesencriptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDesencriptar.Name = "btnDesencriptar";
+            this.btnDesencriptar.Size = new System.Drawing.Size(207, 40);
+            this.btnDesencriptar.TabIndex = 26;
+            this.btnDesencriptar.Text = "Desencriptar";
+            this.btnDesencriptar.UseVisualStyleBackColor = false;
+            this.btnDesencriptar.Click += new System.EventHandler(this.btnDesencriptar_Click);
             // 
             // txtMensaje
             // 
-            this.txtMensaje.Location = new System.Drawing.Point(34, 116);
+            this.txtMensaje.Location = new System.Drawing.Point(208, 143);
             this.txtMensaje.MaxLength = 50;
             this.txtMensaje.Multiline = true;
             this.txtMensaje.Name = "txtMensaje";
+            this.txtMensaje.ReadOnly = true;
             this.txtMensaje.Size = new System.Drawing.Size(718, 100);
-            this.txtMensaje.TabIndex = 23;
+            this.txtMensaje.TabIndex = 27;
             this.txtMensaje.TextChanged += new System.EventHandler(this.txtMensaje_TextChanged);
             // 
             // lblindicacion
@@ -105,28 +122,11 @@
             this.lblindicacion.AutoSize = true;
             this.lblindicacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblindicacion.ForeColor = System.Drawing.Color.DimGray;
-            this.lblindicacion.Location = new System.Drawing.Point(39, 90);
+            this.lblindicacion.Location = new System.Drawing.Point(206, 117);
             this.lblindicacion.Name = "lblindicacion";
-            this.lblindicacion.Size = new System.Drawing.Size(173, 23);
-            this.lblindicacion.TabIndex = 24;
-            this.lblindicacion.Text = "Deja tu mensaje:";
-            // 
-            // btnInsertar
-            // 
-            this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInsertar.FlatAppearance.BorderSize = 0;
-            this.btnInsertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnInsertar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertar.Location = new System.Drawing.Point(255, 240);
-            this.btnInsertar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(290, 46);
-            this.btnInsertar.TabIndex = 25;
-            this.btnInsertar.Text = "INSERTAR";
-            this.btnInsertar.UseVisualStyleBackColor = false;
-            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            this.lblindicacion.Size = new System.Drawing.Size(246, 23);
+            this.lblindicacion.TabIndex = 28;
+            this.lblindicacion.Text = "Mensaje Desencriptado:";
             // 
             // btnRegresar
             // 
@@ -137,52 +137,44 @@
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnRegresar.Location = new System.Drawing.Point(698, 306);
+            this.btnRegresar.Location = new System.Drawing.Point(520, 345);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(90, 32);
-            this.btnRegresar.TabIndex = 26;
+            this.btnRegresar.TabIndex = 29;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // btnVerMensajes
+            // listMensajes
             // 
-            this.btnVerMensajes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnVerMensajes.FlatAppearance.BorderSize = 0;
-            this.btnVerMensajes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnVerMensajes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnVerMensajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerMensajes.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerMensajes.ForeColor = System.Drawing.Color.LightGray;
-            this.btnVerMensajes.Location = new System.Drawing.Point(324, 306);
-            this.btnVerMensajes.Name = "btnVerMensajes";
-            this.btnVerMensajes.Size = new System.Drawing.Size(152, 32);
-            this.btnVerMensajes.TabIndex = 27;
-            this.btnVerMensajes.Text = "Ver mensajes";
-            this.btnVerMensajes.UseVisualStyleBackColor = false;
-            this.btnVerMensajes.Click += new System.EventHandler(this.button1_Click);
+            this.listMensajes.FormattingEnabled = true;
+            this.listMensajes.ItemHeight = 16;
+            this.listMensajes.Items.AddRange(new object[] {
+            "0"});
+            this.listMensajes.Location = new System.Drawing.Point(12, 18);
+            this.listMensajes.Name = "listMensajes";
+            this.listMensajes.Size = new System.Drawing.Size(158, 292);
+            this.listMensajes.TabIndex = 0;
             // 
-            // Mensaje
+            // VerMensajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(800, 350);
-            this.Controls.Add(this.btnVerMensajes);
+            this.ClientSize = new System.Drawing.Size(938, 400);
             this.Controls.Add(this.btnRegresar);
-            this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.lblindicacion);
             this.Controls.Add(this.txtMensaje);
-            this.Controls.Add(this.lblBienvenida);
+            this.Controls.Add(this.btnDesencriptar);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBarraMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Mensaje";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mensaje";
-            this.Load += new System.EventHandler(this.Mensaje_Load);
+            this.Name = "VerMensajes";
+            this.Text = "VerMensajes";
             this.pnlBarraMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,11 +185,11 @@
         private System.Windows.Forms.Panel pnlBarraMenu;
         private System.Windows.Forms.PictureBox btnMinize;
         private System.Windows.Forms.PictureBox btnClose;
-        private System.Windows.Forms.Label lblBienvenida;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnDesencriptar;
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.Label lblindicacion;
-        private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.Button btnVerMensajes;
+        private System.Windows.Forms.ListBox listMensajes;
     }
 }

@@ -98,5 +98,12 @@ namespace APV_CZG_Practica3._3
                 MessageBox.Show("Error al registrar usuario.");
             }
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            login loginForm = new login();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }
