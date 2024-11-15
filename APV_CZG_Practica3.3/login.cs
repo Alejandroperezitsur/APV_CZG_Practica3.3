@@ -65,21 +65,22 @@ namespace APV_CZG_Practica3._3
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            UsuarioDAO usuarioDAO = new UsuarioDAO();
             string usuario = txtUsuario.Text;
             string contrasena = txtPass.Text;
 
-            if (usuarioDAO.IniciarSesion(usuario, contrasena))
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            if (usuarioDAO.IniciarSesion(usuario, contrasena, out int usuarioId))
             {
                 MessageBox.Show("Inicio de sesión exitoso.");
                 this.Hide();
-                // Abre el menú principal después del login
-                Mensaje mensajeForm = new Mensaje();
+
+                // Abre el formulario Mensaje pasando el usuarioId
+                Mensaje mensajeForm = new Mensaje(usuarioId);
                 mensajeForm.Show();
             }
             else
             {
-                MessageBox.Show("Credenciales incorrectas.");
+                MessageBox.Show("Usuario o contraseña incorrectos.");
             }
         }
 

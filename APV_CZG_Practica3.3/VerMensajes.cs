@@ -12,9 +12,24 @@ namespace APV_CZG_Practica3._3
 {
     public partial class VerMensajes : Form
     {
-        public VerMensajes()
+        private int usuarioId; // Almacenar el usuario logueado
+        public VerMensajes(int usuarioId)
         {
             InitializeComponent();
+            this.usuarioId = usuarioId;
+            CargarMensajes();
+        }
+
+        private void CargarMensajes()
+        {
+            MensajeDAO mensajeDAO = new MensajeDAO();
+            DataTable mensajes = mensajeDAO.ObtenerMensajesPorUsuario(usuarioId);
+
+            listMensajes.Items.Clear();
+            foreach (DataRow row in mensajes.Rows)
+            {
+                listMensajes.Items.Add(new { Id = row["id"], Mensaje = row["mensaje_encriptado"] });
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -29,12 +44,26 @@ namespace APV_CZG_Practica3._3
 
         private void btnDesencriptar_Click(object sender, EventArgs e)
         {
+            if (listMensajes.SelectedItem != null)
+            {
+                // Obtener el mensaje seleccionado
+                dynamic itemSeleccionado = listMensajes.SelectedItem;
+                int mensajeId = itemSeleccionado.Id;
 
+                MensajeDAO mensajeDAO = new MensajeDAO();
+                string mensajeDesencriptado = mensajeDAO.DesencriptarMensaje(mensajeId);
+
+                MessageBox.Show("Mensaje desencriptado: " + mensajeDesencriptado);
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un mensaje.");
+            }
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            Mensaje mensajeForm = new Mensaje();
+            Mensaje mensajeForm = new Mensaje(usuarioId);
             mensajeForm.Show();
             this.Hide();
         }
@@ -45,6 +74,11 @@ namespace APV_CZG_Practica3._3
         }
 
         private void listMensajes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VerMensajes_Load(object sender, EventArgs e)
         {
 
         }

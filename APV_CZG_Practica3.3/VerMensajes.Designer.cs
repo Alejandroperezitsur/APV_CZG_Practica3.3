@@ -173,6 +173,7 @@
             this.Name = "VerMensajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerMensajes";
+            this.Load += new System.EventHandler(this.VerMensajes_Load);
             this.pnlBarraMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

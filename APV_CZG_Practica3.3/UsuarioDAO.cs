@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data;
 using MySql.Data.MySqlClient;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace APV_CZG_Practica3._3
 {
@@ -12,7 +10,7 @@ namespace APV_CZG_Practica3._3
 
         public UsuarioDAO()
         {
-            string connectionString = "Server=calebitsurdb.mysql.database.azure.com;Database=SistemaMensajes;Uid=calebitsur;Pwd=Cvetdcmahmqv*;";
+            string connectionString = "Server=proyectobh.mysql.database.azure.com;Database=PuntoDeVenta;Uid=ProyectoU4;Pwd=SQL55H7#;";
             connection = new MySqlConnection(connectionString);
         }
 
@@ -22,19 +20,16 @@ namespace APV_CZG_Practica3._3
             {
                 connection.Open();
 
-                // Encriptar la contraseña
-                string contrasenaEncriptada = EncriptarContrasena(contrasena);
-
-                string query = "INSERT INTO usuarios (nombre, apellido, correo_electronico, usuario, contrasena) VALUES (@nombre, @apellido, @correo, @usuario, @contrasena)";
+                string query = "INSERT INTO usuarios (nombre, apellido, correo_electronico, usuario, contrasena) " +
+                               "VALUES (@nombre, @apellido, @correo, @usuario, SHA2(@contrasena, 256))";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@nombre", nombre);
                 cmd.Parameters.AddWithValue("@apellido", apellido);
                 cmd.Parameters.AddWithValue("@correo", correo);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@contrasena", contrasenaEncriptada);
+                cmd.Parameters.AddWithValue("@contrasena", contrasena);
 
                 int result = cmd.ExecuteNonQuery();
-
                 return result > 0;
             }
             finally
@@ -43,41 +38,32 @@ namespace APV_CZG_Practica3._3
             }
         }
 
-        public bool IniciarSesion(string usuario, string contrasena)
+        public bool IniciarSesion(string usuario, string contrasena, out int usuarioId)
         {
+            usuarioId = -1;
             try
             {
                 connection.Open();
-
-                string contrasenaEncriptada = EncriptarContrasena(contrasena);
-
-                string query = "SELECT COUNT(*) FROM usuarios WHERE usuario = @usuario AND contrasena = @contrasena";
+                string query = "SELECT id FROM usuarios WHERE usuario = @usuario AND contrasena = SHA2(@contrasena, 256)";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@contrasena", contrasenaEncriptada);
+                cmd.Parameters.AddWithValue("@contrasena", contrasena);
 
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                var result = cmd.ExecuteScalar();
 
-                return count > 0;
+                if (result != null)
+                {
+                    usuarioId = Convert.ToInt32(result);
+                    return true;
+                }
+
+                return false;
             }
             finally
             {
                 connection.Close();
             }
         }
-
-        private string EncriptarContrasena(string contrasena)
-        {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(contrasena));
-                StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
-                {
-                    builder.Append(b.ToString("x2"));
-                }
-                return builder.ToString();
-            }
-        }
     }
 }
+
